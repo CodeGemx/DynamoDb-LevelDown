@@ -6,7 +6,7 @@
     ],
     "target": "ES6",
     "outDir": "dist",
-    "module": "CommonJS",
+    "module": "es2020",
     "moduleResolution": "Node",
     "strict": true,
     "sourceMap": true,
