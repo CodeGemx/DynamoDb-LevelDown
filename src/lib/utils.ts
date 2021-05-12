@@ -139,6 +139,18 @@ export function withoutKeys<T extends DynamoDB.ItemCollectionKeyAttributeMap>(it
 }
 
 /* @internal */
+export function withKeysOnly<T extends DynamoDB.ItemCollectionKeyAttributeMap>(item: T): T {
+  if (!item) return item;
+  if (!item.hasOwnProperty(Keys.RANGE_KEY)) return undefined as unknown as T;
+
+  let newItem: { [key: string]: DynamoDB.AttributeValue } = {
+    [Keys.RANGE_KEY]: item[Keys.RANGE_KEY]
+  };
+
+  return <T>newItem;
+}
+
+/* @internal */
 export function keyConditionsFor(hashKey: string, rangeCondition: DynamoDB.Condition): DynamoDB.KeyConditions {
   return {
     [Keys.HASH_KEY]: {

@@ -31,6 +31,8 @@ export interface IteratorOptions extends AbstractIteratorOptions<any> {
   end?: LevelKey;
   lastKey?: DynamoDB.Key;
   inclusive?: boolean;
+  keys?: boolean;
+  values?: boolean;
 }
 
 /* @internal */
