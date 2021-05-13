@@ -11,8 +11,9 @@ import {
   ExtractionItem,
 } from './types.js';
 import { deserialize } from './serialize.js';
-import { cloneDeep } from 'lodash';
+import lodash from 'lodash';
 
+const { cloneDeep } = lodash;
 const createS3Pointer = (key: string): S3Pointer => ({ _s3key: key });
 const buildKeyPath = (parent?: string, current?: string) =>
   [parent, current].filter((v) => !!v && v.length > 0).join('/');
