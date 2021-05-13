@@ -4,7 +4,6 @@ import { serialize, deserialize } from '../src/lib/serialize';
 import {
   cloneObject,
   withoutKeys,
-  withKeysOnly,
   rangeKeyFrom,
   castToBuffer,
   isBuffer,
@@ -111,38 +110,6 @@ test('utility tests', (t) => {
       t.notOk(keyless[Keys.HASH_KEY], 'has no hash key');
       t.notOk(keyless[Keys.RANGE_KEY], 'has no range key');
       t.ok(keyless[Keys.DATA_KEY], 'has data key');
-
-      t.end();
-    });
-
-    t.end();
-  });
-
-  t.test('key only retrieval', (t) => {
-    t.test('success with undefined', (t) => {
-      const keyless = withKeysOnly(<any>undefined);
-      t.notOk(keyless, 'give undefined, get undefined');
-
-      t.end();
-    });
-
-    t.test('success with basic value', (t) => {
-      const keyless = withKeysOnly(<any>1);
-      t.notOk(keyless, 'get undefined without key');
-
-      t.end();
-    });
-
-    t.test('success with defined', (t) => {
-      const dbItem = {
-        [Keys.HASH_KEY]: serialize('fake'),
-        [Keys.RANGE_KEY]: serialize('news'),
-        [Keys.DATA_KEY]: serialize('everywhere'),
-      };
-      const keyless = withKeysOnly(dbItem);
-      t.notOk(keyless[Keys.DATA_KEY], 'has no data key');
-      t.notOk(keyless[Keys.HASH_KEY], 'has no hash key');
-      t.ok(keyless[Keys.RANGE_KEY], 'has range key');
 
       t.end();
     });

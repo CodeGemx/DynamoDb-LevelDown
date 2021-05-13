@@ -13,8 +13,7 @@ import {
   dataFromItem,
   rangeKeyFrom,
   keyConditionsFor,
-  createRangeKeyCondition,
-  withKeysOnly
+  createRangeKeyCondition
 } from './utils';
 
 const EVENT_END = 'end';
@@ -172,18 +171,6 @@ export class DynamoDbIterator extends AbstractIterator {
     let returnCount = 0;
     let keysOnly = opts.keys && !opts.values;
 
-    const getValue = <T extends DynamoDB.ItemCollectionKeyAttributeMap>(item: T): T => {
-      if (!opts.keys) {
-        return withoutKeys(item);
-      }
-
-      if (keysOnly) {
-        return withKeysOnly(item);
-      }
-
-      return item;
-    };
-
     const isFinished = () => {
       return !!opts.limit && opts.limit > 0 && returnCount > opts.limit;
     };
@@ -195,7 +182,8 @@ export class DynamoDbIterator extends AbstractIterator {
 
     const stream = through2.obj(async function (data, enc, cb) {
       returnCount += 1;
-      pushNext(this, { key: rangeKeyFrom(data), value: getValue(data.value) });
+      const rangeKey = rangeKeyFrom(data);
+      pushNext(this, { key: rangeKey, value: keysOnly ? rangeKey : withoutKeys(data.value) });
       if (isFinished()) {
         this.emit(EVENT_END);
       }
