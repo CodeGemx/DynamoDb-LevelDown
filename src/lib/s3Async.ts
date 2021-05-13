@@ -1,6 +1,6 @@
 import { S3 } from 'aws-sdk';
 import { promisify } from 'util';
-import { Attachment } from './types';
+import { Attachment } from './types.js';
 
 /* @internal */
 export class S3Async {

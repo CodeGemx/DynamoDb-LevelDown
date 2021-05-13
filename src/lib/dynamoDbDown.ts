@@ -14,12 +14,12 @@ import {
 } from 'abstract-leveldown';
 import supports, { SupportManifest } from 'level-supports';
 
-import { DynamoDbIterator } from './iterator';
-import { DynamoDbAsync } from './dynamoDbAsync';
-import * as DynamoTypes from './types';
-import { isBuffer } from './utils';
-import { S3Async } from './s3Async';
-import { DynamoS3 } from './dynamoS3';
+import { DynamoDbIterator } from './iterator.js';
+import { DynamoDbAsync } from './dynamoDbAsync.js';
+import * as DynamoTypes from './types.js';
+import { isBuffer } from './utils.js';
+import { S3Async } from './s3Async.js';
+import { DynamoS3 } from './dynamoS3.js';
 
 const manifest: SupportManifest = {
   bufferKeys: true,

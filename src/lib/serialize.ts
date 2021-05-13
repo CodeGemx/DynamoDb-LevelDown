@@ -1,5 +1,5 @@
-import { ValueTransformer } from './types';
-import { isBuffer } from './utils';
+import { ValueTransformer } from './types.js';
+import { isBuffer } from './utils.js';
 
 /* @internal */
 export const serialize = (value: any) => getTransformerOrThrow(value).toDb(value);

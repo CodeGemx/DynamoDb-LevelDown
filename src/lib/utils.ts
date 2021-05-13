@@ -9,8 +9,8 @@ import {
   S3Pointers,
   S3ObjectBatch,
   ExtractionItem,
-} from './types';
-import { deserialize } from './serialize';
+} from './types.js';
+import { deserialize } from './serialize.js';
 import { cloneDeep } from 'lodash';
 
 const createS3Pointer = (key: string): S3Pointer => ({ _s3key: key });

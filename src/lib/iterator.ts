@@ -3,9 +3,9 @@ import { DynamoDB } from 'aws-sdk';
 import { Transform } from 'stream';
 import { AbstractIterator, ErrorKeyValueCallback } from 'abstract-leveldown';
 
-import { DynamoDbDown } from './dynamoDbDown';
-import { DynamoDbAsync } from './dynamoDbAsync';
-import { IteratorOptions, SimpleItem } from './types';
+import { DynamoDbDown } from './dynamoDbDown.js';
+import { DynamoDbAsync } from './dynamoDbAsync.js';
+import { IteratorOptions, SimpleItem } from './types.js';
 import {
   isBuffer,
   withoutKeys,
@@ -14,7 +14,7 @@ import {
   rangeKeyFrom,
   keyConditionsFor,
   createRangeKeyCondition
-} from './utils';
+} from './utils.js';
 
 const EVENT_END = 'end';
 const EVENT_ERROR = 'error';

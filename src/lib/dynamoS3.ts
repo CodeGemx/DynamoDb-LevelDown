@@ -1,7 +1,7 @@
-import { S3Async } from './s3Async';
-import { DynamoDbAsync } from './dynamoDbAsync';
-import { extractS3Pointers, restoreAttachments, extractAttachments, dataFromItem } from './utils';
-import { AttachmentDefinition, AttachmentResult, SimpleItem, S3PointerBatch } from './types';
+import { S3Async } from './s3Async.js';
+import { DynamoDbAsync } from './dynamoDbAsync.js';
+import { extractS3Pointers, restoreAttachments, extractAttachments, dataFromItem } from './utils.js';
+import { AttachmentDefinition, AttachmentResult, SimpleItem, S3PointerBatch } from './types.js';
 
 /* @internal */
 export class DynamoS3 {
