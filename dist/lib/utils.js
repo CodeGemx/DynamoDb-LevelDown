@@ -1,5 +1,5 @@
-import { Keys, } from './types';
-import { deserialize } from './serialize';
+import { Keys, } from './types.js';
+import { deserialize } from './serialize.js';
 import { cloneDeep } from 'lodash';
 const createS3Pointer = (key) => ({ _s3key: key });
 const buildKeyPath = (parent, current) => [parent, current].filter((v) => !!v && v.length > 0).join('/');

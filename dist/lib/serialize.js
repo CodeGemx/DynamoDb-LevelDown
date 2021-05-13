@@ -1,4 +1,4 @@
-import { isBuffer } from './utils';
+import { isBuffer } from './utils.js';
 /* @internal */
 export const serialize = (value) => getTransformerOrThrow(value).toDb(value);
 /* @internal */

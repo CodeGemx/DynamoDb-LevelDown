@@ -2,7 +2,7 @@
 import { DynamoDB } from 'aws-sdk';
 import { AbstractLevelDOWN, AbstractOpenOptions, ErrorCallback, AbstractOptions, AbstractGetOptions, ErrorValueCallback, AbstractBatch, AbstractIteratorOptions, AbstractIterator } from 'abstract-leveldown';
 import { SupportManifest } from 'level-supports';
-import * as DynamoTypes from './types';
+import * as DynamoTypes from './types.js';
 export declare class DynamoDbDown extends AbstractLevelDOWN {
     private hashKey;
     private tableName;

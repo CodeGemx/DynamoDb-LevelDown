@@ -1,7 +1,7 @@
 import { AbstractIterator, ErrorKeyValueCallback } from 'abstract-leveldown';
-import { DynamoDbDown } from './dynamoDbDown';
-import { DynamoDbAsync } from './dynamoDbAsync';
-import { IteratorOptions } from './types';
+import { DynamoDbDown } from './dynamoDbDown.js';
+import { DynamoDbAsync } from './dynamoDbAsync.js';
+import { IteratorOptions } from './types.js';
 export declare class DynamoDbIterator extends AbstractIterator {
     private dynamoDb;
     private hashKey;

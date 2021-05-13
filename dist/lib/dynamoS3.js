@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { extractS3Pointers, restoreAttachments, extractAttachments, dataFromItem } from './utils';
+import { extractS3Pointers, restoreAttachments, extractAttachments, dataFromItem } from './utils.js';
 /* @internal */
 export class DynamoS3 {
     static syncS3(items, dynamoDbAsync, s3Async, s3AttachmentDefs) {

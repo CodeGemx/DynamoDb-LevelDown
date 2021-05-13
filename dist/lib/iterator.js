@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import through2 from 'through2';
 import { AbstractIterator } from 'abstract-leveldown';
-import { isBuffer, withoutKeys, castToBuffer, dataFromItem, rangeKeyFrom, keyConditionsFor, createRangeKeyCondition } from './utils';
+import { isBuffer, withoutKeys, castToBuffer, dataFromItem, rangeKeyFrom, keyConditionsFor, createRangeKeyCondition } from './utils.js';
 const EVENT_END = 'end';
 const EVENT_ERROR = 'error';
 const EVENT_PUSHED = 'pushed';

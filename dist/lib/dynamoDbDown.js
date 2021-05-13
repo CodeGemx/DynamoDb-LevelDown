@@ -9,12 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { AbstractLevelDOWN } from 'abstract-leveldown';
 import supports from 'level-supports';
-import { DynamoDbIterator } from './iterator';
-import { DynamoDbAsync } from './dynamoDbAsync';
-import * as DynamoTypes from './types';
-import { isBuffer } from './utils';
-import { S3Async } from './s3Async';
-import { DynamoS3 } from './dynamoS3';
+import { DynamoDbIterator } from './iterator.js';
+import { DynamoDbAsync } from './dynamoDbAsync.js';
+import * as DynamoTypes from './types.js';
+import { isBuffer } from './utils.js';
+import { S3Async } from './s3Async.js';
+import { DynamoS3 } from './dynamoS3.js';
 const manifest = {
     bufferKeys: true,
     snapshots: true,
