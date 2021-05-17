@@ -116,7 +116,10 @@ export class DynamoDbAsync {
     }
     delete(key) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.deleteItemAsync(this.queryItem(key));
+            const params = this.queryItem(key);
+            // consistent read is not a valid parameter for deletes
+            delete params.ConsistentRead;
+            yield this.deleteItemAsync(params);
         });
     }
     tableExists() {
